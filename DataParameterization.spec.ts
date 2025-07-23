@@ -84,6 +84,8 @@ test('Create Lead in LeafTaps', async ({ page }) => {
 
     }
 
+  await page.waitForTimeout(3000)
+
   await page.locator(".smallSubmit").click()
 
 })
