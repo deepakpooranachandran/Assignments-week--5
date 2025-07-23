@@ -58,6 +58,12 @@ test('Create Lead in LeafTaps', async ({ page }) => {
 
   console.log('Total options in Marketing Campaign dropdown: ' + totalOptions)
 
+  for(let i=0;i<totalOptions;i++){
+
+    console.log(await dropdownOptions.nth(i).innerText())
+
+    }
+
   await page.selectOption("[id ='createLeadForm_industryEnumId']",{index:6})
 
   await page.selectOption("[id='createLeadForm_currencyUomId']",{value:"INR"})
@@ -71,6 +77,12 @@ test('Create Lead in LeafTaps', async ({ page }) => {
   const totalStates = await states.count()
 
   console.log('Total number of states in dropdown: ' + totalStates)
+
+  for(let i=0;i<totalStates;i++){
+
+    console.log(await states.nth(i).innerText())
+
+    }
 
   await page.locator(".smallSubmit").click()
 
